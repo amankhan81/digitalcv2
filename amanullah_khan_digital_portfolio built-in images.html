@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanullah Khan | Digital Portfolio</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a;          /* Sophisticated Deep Slate Blue */
+            --primary-light: #1e293b;    /* Lighter Slate */
+            --secondary: #059669;        /* Academic Emerald Green */
+            --secondary-hover: #047857;  /* Deep Emerald */
+            --accent: #f59e0b;           /* Amber Accent */
+            --text-main: #334155;        /* Premium Dark Slate Grey */
+            --text-muted: #64748b;       /* Cool Muted Grey */
+            --bg-light: #f8fafc;         /* Premium Clean Off-White */
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --shadow-hover: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER / HERO SECTION --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #020617 100%);
+            color: #ffffff;
+            padding: 7rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(5, 150, 105, 0.18) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            line-height: 1.15;
+            background: linear-gradient(to right, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1rem 0;
+        }
+
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: var(--transition);
+        }
+
+        .meta-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+            padding-bottom: 2px;
+        }
+
+        .meta-info a:hover {
+            color: #10b981;
+            border-bottom-color: #10b981;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2.2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 18px rgba(5, 150, 105, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.45);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* --- MAIN CONTENT LAYOUT --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-box {
+            background-color: var(--card-bg);
+            padding: 3.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .about-box p {
+            margin-bottom: 1.75rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 400;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+            margin-top: 3.5rem;
+        }
+
+        .pillar-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            background: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: #cbd5e1;
+        }
+
+        .pillar-card h4 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pillar-icon {
+            color: var(--secondary);
+        }
+
+        /* --- PORTFOLIO GRID --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: #cbd5e1;
+        }
+
+        /* --- IMAGE CONTAINER with Smooth Loading Reveal --- */
+        .card-image-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            overflow: hidden;
+        }
+
+        /* Loading shimmer animation / fallback graphic */
+        .card-image-container::before {
+            content: 'Loading Portfolio Asset...';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            background: linear-gradient(90deg, rgba(30,41,59,1) 0%, rgba(51,65,85,1) 50%, rgba(30,41,59,1) 100%);
+            background-size: 200% 100%;
+            animation: pulse-shimmer 2s infinite linear;
+        }
+
+        @keyframes pulse-shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Starts invisible, fades in elegantly if it successfully loads from system */
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+        }
+
+        /* Overlay Index Badge */
+        .project-number {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            background: rgba(15, 23, 42, 0.85);
+            color: #10b981;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-content {
+            padding: 2.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--secondary);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        /* Features List inside Card */
+        .card-features {
+            list-style: none;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .card-features li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        /* Dedicated Card Link Button */
+        .card-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.85rem 1.5rem;
+            background-color: #f1f5f9;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
+
+        .card-link-btn:hover {
+            background-color: var(--secondary);
+            color: #ffffff;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+        }
+
+        .card-link-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-link-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: #64748b;
+            text-align: center;
+            padding: 4rem 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .subtitle { font-size: 1rem; }
+            .about-box { padding: 2rem; }
+            header { padding: 5rem 1.5rem 4rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO HEADER -->
+    <header>
+        <div class="header-container">
+            <h1>Amanullah Khan</h1>
+            <p class="subtitle">Academic Lead &bull; EdTech Strategist &bull; Instructional Leadership</p>
+            
+            <div class="meta-info">
+                <span>📧 <a href="mailto:amankhanjis@gmail.com">amankhanjis@gmail.com</a></span>
+                <span>📱 <a href="tel:+966568959394">+966 568959394</a></span>
+                <span>🌐 <a href="https://www.smartstudygrid.com" target="_blank">www.smartstudygrid.com</a></span>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://drive.google.com/file/d/1ID8q_VL76Kx2w7aC7P_m0U4YP-96GUbY/view?usp=sharing" target="_blank" class="btn btn-primary">
+                    <svg style="width:18px;height:18px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download CV (PDF)
+                </a>
+                <a href="https://youtu.be/PLzFdQrnqF4" target="_blank" class="btn btn-secondary">
+                    <svg style="width:18px;height:18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    Watch Intro Video
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT -->
+    <main>
+        
+        <!-- ABOUT ME SECTION -->
+        <section id="about">
+            <h2 class="section-title">About Me & Professional Vision</h2>
+            <div class="about-box">
+                <p>With over two decades of experience in international education, I specialize in the intersection of <strong>pedagogical excellence</strong> and <strong>digital transformation</strong>. As an expert in the TPACK framework, I have successfully moved beyond the classroom to lead school-wide initiatives, including the engineering of centralized admission systems and the deployment of comprehensive Learning Management Systems (LMS).</p>
+                <p>My career is built on optimizing academic environments, turning traditional platforms into hyper-efficient, modern ecosystems that enhance student outcomes and drive institutional growth.</p>
+                
+                <div class="pillars">
+                    <div class="pillar-card">
+                        <h4>
+                            <span class="pillar-icon">⚡</span>
+                            Faculty Empowerment
+                        </h4>
+                        <p style="font-size: 0.9rem; margin: 0; color: var(--text-muted);">Designing and delivering high-impact training frameworks that equip educators to effortlessly deploy technology for systemic student success.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4>
+                            <span class="pillar-icon">💡</span>
+                            Instructional Innovation
+                        </h4>
+                        <p style="font-size: 0.9rem; margin: 0; color: var(--text-muted);">Harnessing modern AI engines and adaptive digital content streams to structure personalized learning pathways for high-stakes IGCSE and A-Level curricula.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4>
+                            <span class="pillar-icon">⚙️</span>
+                            Systemic Efficiency
+                        </h4>
+                        <p style="font-size: 0.9rem; margin: 0; color: var(--text-muted);">Re-engineering operational and academic workflows using targeted digital strategies to mitigate manual administrative drag.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLETED PROJECTS PORTFOLIO -->
+        <section id="portfolio">
+            <h2 class="section-title">Project Portfolio & Leadership Assets</h2>
+            
+            <div class="portfolio-grid">
+                
+                <!-- Project 01 -->
+                <div class="project-card">
+                    <!-- Image container references external onecompiler links and features smooth fade-in reveal -->
+                    <div class="card-image-container">
+                        <span class="project-number">Project 01</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/01.png" alt="IGCSE English Digitized Platform Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Digital Platform</span>
+                        <h3>IGCSE English Digitized Platform (0510)</h3>
+                        <p>An interactive examination interface digitizing traditional testing suites into custom self-paced, device-independent modules with real-time automated scoring models.</p>
+                        <ul class="card-features">
+                            <li>Instant zero-turnaround grading engines</li>
+                            <li>Native built-in contextual audio assets</li>
+                            <li>Logic-based automated performance certification</li>
+                        </ul>
+                        <a href="https://examdashboard.smartstudygrid.workers.dev/" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 02</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/02.png" alt="Sadlier Vocabulary Portal Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Instructional Design</span>
+                        <h3>Sadlier Vocabulary Portal [Grade 8]</h3>
+                        <p>Transformed physical literary workshop assets into a unified web experience complete with multimedia tools optimized for individual mastery loops.</p>
+                        <ul class="card-features">
+                            <li>Native audio pronunciation libraries</li>
+                            <li>Self-grading targeted diagnostic check-ins</li>
+                            <li>Responsive design for uniform cross-device study</li>
+                        </ul>
+                        <a href="https://amankhan81.github.io/Levelc/" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 03</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/03.png" alt="100 IGCSE English Idioms Portal Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Interactive Library</span>
+                        <h3>100 IGCSE English Idioms Portal</h3>
+                        <p>A specialized linguistic accelerator platform built to refine the precise stylistic writing marks for top-tier IGCSE Exercise 5 targets.</p>
+                        <ul class="card-features">
+                            <li>Three-tier systematic structural retention loops</li>
+                            <li>Dynamic audio tone mapping accents</li>
+                            <li>Direct structural integration for independent study</li>
+                        </ul>
+                        <a href="https://amankhan81.github.io/idioms/" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 04 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 04</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/04.png" alt="Digital Spelling Bee Training Suite Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Gamified EdTech</span>
+                        <h3>Digital Spelling Bee Training Suite</h3>
+                        <p>Automated instructional workspace engineered to coach students on complex phonetic patterns independently, completely eliminating manual drilling metrics.</p>
+                        <ul class="card-features">
+                            <li>High-fidelity speed-variable audio prompts</li>
+                            <li>Fully scalable administrative backend word sets</li>
+                            <li>24/7 asynchronous campus-wide accessibility</li>
+                        </ul>
+                        <a href="https://spellingbee456.smartstudygrid.workers.dev/" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 05 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 05</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/05.png" alt="CricketScan Pro AI Highlights Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Automation Engine</span>
+                        <h3>CricketScan Pro AI Highlights</h3>
+                        <p>A custom logic application developed to parse, identify, and slice critical milestone events out of long-form video archives within minutes.</p>
+                        <ul class="card-features">
+                            <li>Algorithmic trigger recognition scripts</li>
+                            <li>Zero editing experience required for end-users</li>
+                            <li>Grassroots asset scaling structures</li>
+                        </ul>
+                        <a href="https://amankhan81.github.io/crichighlights2/" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 06 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 06</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/06.png" alt="Informal Writing AI Masterclass Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Instructional Media</span>
+                        <h3>Informal Writing AI Masterclass</h3>
+                        <p>An advanced multimodal course format driven by customized pedagogical rule sets via targeted artificial intelligence tools.</p>
+                        <ul class="card-features">
+                            <li>Engineered through NotebookLM directives</li>
+                            <li>Unified conversational explainer components</li>
+                            <li>Strictly aligned with current syllabus guidelines</li>
+                        </ul>
+                        <a href="https://informal-email.my.canva.site/email" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 07 -->
+                <div class="project-card">
+                    <div class="card-image-container">
+                        <span class="project-number">Project 07</span>
+                        <img src="https://uploads.onecompiler.io/44hw4wgya/44r5bd2fr/07.png" alt="Saudi Culture Day Interactive Event Preview" onload="this.style.opacity=1;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <span class="card-tag">Event Coordination</span>
+                        <h3>Saudi Culture Day Interactive Event</h3>
+                        <p>An experiential student framework organized alongside corporate broadcast tech to celebrate cultural identities and develop practical career roles.</p>
+                        <ul class="card-features">
+                            <li>Live multi-cam broadcasting setup via vMix</li>
+                            <li>Structured project roles for student tech crews</li>
+                            <li>Aligned directly with Saudi Vision 2030 values</li>
+                        </ul>
+                        <a href="https://youtu.be/Pwcmgh0HeJY" target="_blank" class="card-link-btn">
+                            Explore Project 
+                            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Amanullah Khan. Built with a vision for Modern Educational Leadership, Digital Transformation, and Institutional Excellence.</p>
+    </footer>
+
+</body>
+</html>
